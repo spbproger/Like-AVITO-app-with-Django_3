@@ -10,7 +10,8 @@ class LocationSerializer(serializers.ModelSerializer):
 
 
 class UserListSerializer(serializers.ModelSerializer):
-
+    total_ads = serializers.SerializerMethodField()
+    
     location = serializers.SlugRelatedField(
         many=True,
         read_only=True,
